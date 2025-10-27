@@ -1,5 +1,4 @@
 public class Policy {
-
     private String policyNumber;
     private String providerName;
     private String policyholderFirstName;
