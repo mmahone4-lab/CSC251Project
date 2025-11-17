@@ -31,25 +31,17 @@ public class Project_Matthew_Mahoney {
         int nonSmokerCount = 0;
         
         for (Policy policy : policies) {
-            System.out.println("Policy Number: " + policy.getPolicyNumber());
-            System.out.println("Provider Name: " + policy.getProviderName());
-            System.out.println("Policyholder's First Name: " + policy.getPolicyholderFirstName());
-            System.out.println("Policyholder's Last Name: " + policy.getPolicyholderLastName());
-            System.out.println("Policyholder's Age: " + policy.getPolicyholderAge());
-            System.out.println("Policyholder's Smoking Status: " + policy.getSmokingStatus());
-            System.out.println("Policyholder's Height: " + policy.getPolicyholderHeight() + " inches");
-            System.out.println("Policyholder's Weight: " + policy.getPolicyholderWeight() + " pounds");
-            System.out.printf("Policyholder's BMI: %.2f\n", policy.calculateBMI());
-            System.out.printf("Policy Price: $%.2f\n", policy.calculatePolicyPrice());
+            System.out.println(policy);
             System.out.print("Policy claim status: Denied\n\n");
             
-            if (policy.getSmokingStatus().equalsIgnoreCase("smoker")) {
+            if (policy.getPolicyHolder().getSmokingStatus().equalsIgnoreCase("smoker")) {
                 smokerCount++;
             } else {
                 nonSmokerCount++;
             }
         }
         
+        System.out.println("There were " + Policy.getNumberOfPolicies() + " Policy objects created.");
         System.out.println("The number of policies with a smoker is: " + smokerCount);
         System.out.println("The number of policies with a non-smoker is: " + nonSmokerCount);
     }
